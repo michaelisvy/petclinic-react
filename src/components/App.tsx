@@ -1,4 +1,4 @@
-import './App.css'
+import '../App.css'
 import { AppBar } from '@material-ui/core';
 import MaterialTable from './MaterialTable';
 import { makeStyles } from '@material-ui/core/styles';
