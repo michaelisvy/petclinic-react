@@ -77,11 +77,17 @@ const MaterialTable = () => {
     if (selectedMenuItem === 'petTypes') {
       return <PetTypes />;
     }
-    return <div>Welcome to the Main Page</div>;
+    return (
+      <div>
+        <div>Welcome to the Main Page</div>
+        <img src="/pets.png" alt="Pets" />
+      </div>
+    );
+    
   };
 
   return (
-    <div style={{ width: '500px', height: '600px' }}>
+    <div style={{ width: '1200px', height: '600px' }}>
       <AppBar position="static">
         <Menu onMenuItemClick={handleMenuItemClick} />
       </AppBar>
