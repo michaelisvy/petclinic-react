@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import '../App.css'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination } from '@material-ui/core';
 import PetService from '../service/PetService';
 

@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   appBar: {
-    backgroundColor: 'white', // Replace with your desired color
+    backgroundColor: 'white',
     color: "black"
   },
 });
