@@ -1,25 +1,16 @@
 import { useEffect, useState } from 'react'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
+import PetService from '../service/PetService';
 
 const PetTypes = () => {
   const [petTypes, setPetTypes] = useState([{ id: '', name: '' }]);
-  
-  const fetchData = () => {
-    fetch("http://localhost:9966/petclinic/api/pettypes")
-    .then(response => response.json())
-    .then(data => {
-      // Handle the response data
-      console.log(data);
-      setPetTypes(data);
-    })
-    .catch(error => {
-      // Handle any errors that occur during the request
-      console.error(error);
-      });
-  }
+
+  const petService = new PetService();
 
   useEffect(() => {
-    fetchData()
+    petService.findAllPetTypes()
+      .then( (data) => {setPetTypes(data)} )
+      .catch(error => { console.log(error) } )
   }, [])
 
   return (
