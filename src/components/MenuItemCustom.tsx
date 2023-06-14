@@ -1,5 +1,6 @@
 import { MenuItem, ListItemIcon } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   menuItem: {
@@ -27,10 +28,12 @@ const MenuItemCustom = ({ icon, text, onClick, selected }: MenuItemCustomProps) 
   
 
   return (
-    <MenuItem onClick={onClick} className={selected ? classes.selectedMenuItem : classes.menuItem}>
+    <Link to='/pets'>
+    <MenuItem className={selected ? classes.selectedMenuItem : classes.menuItem}>
     <ListItemIcon className={classes.icon}>{icon}</ListItemIcon>
-    {text}
+        {text}
   </MenuItem>
+  </Link>
   );
 };
 

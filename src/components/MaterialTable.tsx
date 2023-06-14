@@ -6,6 +6,8 @@ import MenuItemCustom from './MenuItemCustom';
 import { makeStyles } from '@material-ui/core/styles';
 import HomeIcon from '@material-ui/icons/Home';
 import PetsIcon from '@material-ui/icons/Pets';
+import { BrowserRouter as Router, Routes , Route} from 'react-router-dom';
+
 
 const useStyles = makeStyles((theme) => ({
   toolBar: {
@@ -33,24 +35,32 @@ const Menu = ({ onMenuItemClick }: MenuProps) => {
 
   return (
     <Toolbar  className={classes.toolBar}>
-      <MenuItemCustom
-        icon={<HomeIcon />}
-        text="Home"
-        onClick={() => handleMenuItemClick('home')}
-        selected={selectedItem === 'home'}
-      />  
-      <MenuItemCustom
-        icon={<PetsIcon />}
-        text="Pets"
-        onClick={() => handleMenuItemClick('pets')}
-        selected={selectedItem === 'pets'}
-      />
-      <MenuItemCustom
-        icon={<PetsIcon />}
-        text="Pet Types"
-        onClick={() => handleMenuItemClick('petTypes')}
-        selected={selectedItem === 'petTypes'}
-      />
+      
+          <MenuItemCustom
+            icon={<HomeIcon />}
+            text="Home"
+            onClick={() => handleMenuItemClick('home')}
+            selected={selectedItem === 'home'}
+          />  
+          <MenuItemCustom
+            icon={<PetsIcon />}
+            text="Pets"
+            onClick={() => handleMenuItemClick('pets')}
+            selected={selectedItem === 'pets'}
+          />
+        <MenuItemCustom
+          icon={<PetsIcon />}
+          text="Pet Types"
+          onClick={() => handleMenuItemClick('petTypes')}
+          selected={selectedItem === 'petTypes'}
+        />
+        <Router>
+        <Routes>
+        <Route path='/home' element={<Pets />}   />
+        <Route path='/pets' element={<Pets />} /> 
+        <Route path='/petTypes' element={<PetTypes />} /> 
+        </Routes>
+      </Router>
     </Toolbar>
   );
 };

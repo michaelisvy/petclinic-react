@@ -2,6 +2,7 @@ import '../App.css'
 import { AppBar } from '@material-ui/core';
 import MaterialTable from './MaterialTable';
 import { makeStyles } from '@material-ui/core/styles';
+import SimpleSample from './SimpleSample';
 
 const useStyles = makeStyles({
   appBar: {
@@ -16,7 +17,7 @@ const App = () => {
   return (
       <div>
       <AppBar position="static" className={classes.appBar}>
-        <MaterialTable />
+        <SimpleSample />
       </AppBar>  
       </div>
   )
