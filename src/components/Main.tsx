@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Pets from './Pets';
 import PetTypes from './PetTypes';
 import Owners from './Owners';
-import OwnerForm from './OwnersForm'
+import OwnerForm from './OwnerForm'
 
 function Home() {
   return (

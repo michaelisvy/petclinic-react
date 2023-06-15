@@ -17,6 +17,7 @@ class PetService {
       });
   };
 
+
   findAllPetTypes = (): Promise<any> => {
     return fetch(this.url + '/pettypes')
       .then((response) => response.json())
