@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 class PetService {
   private url: string = 'http://localhost:9966/petclinic/api';
 
@@ -15,6 +17,10 @@ class PetService {
       .catch((error) => {
         console.error(error);
       });
+  };
+
+  addOwner = (requestBody: FormData): Promise<any> => {
+    return axios.post(this.url + '/owners', requestBody);
   };
 
 

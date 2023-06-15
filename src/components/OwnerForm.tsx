@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+import PetService from '../service/PetService';
 
 const OwnersForm = () => {
   const [firstName, setFirstName] = useState('');
@@ -8,12 +8,14 @@ const OwnersForm = () => {
   const [city, setCity] = useState('');
   const [telephone, setTelephone] = useState('');
 
+  const petService = new PetService();
+
   interface FormData {
-    firstName:string,
-      lastName:string,
-      address:string,
-      city:string,
-      telephone:string
+    firstName: string;
+    lastName: string;
+    address: string;
+    city: string;
+    telephone: string;
   }
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -24,13 +26,13 @@ const OwnersForm = () => {
       lastName,
       address,
       city,
-      telephone
+      telephone,
     };
 
     try {
       // Send the POST request to the REST service
       console.log('Response:', requestBody);
-      const response = await axios.post('http://localhost:9966/petclinic/api/owners', requestBody);
+      const response = await petService.addOwner(requestBody);
 
       // Handle the response from the REST service
       console.log('Response:', response.data);
@@ -43,7 +45,7 @@ const OwnersForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-       First name:
+        First name:
         <input
           type="text"
           value={firstName}
@@ -52,7 +54,7 @@ const OwnersForm = () => {
       </label>
       <br />
       <label>
-       Last name:
+        Last name:
         <input
           type="text"
           value={lastName}
@@ -61,7 +63,7 @@ const OwnersForm = () => {
       </label>
       <br />
       <label>
-       Address:
+        Address:
         <input
           type="text"
           value={address}
