@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Pets from './Pets'
 import PetTypes from './PetTypes'
+import Owners from './Owners';
 
 function Home() {
   return (
@@ -11,7 +12,7 @@ function Home() {
   );
 }
 
-function SimpleSample() {
+function Main() {
   return (
     <Router>
       <nav style={{ margin: 10 }}>
@@ -21,6 +22,9 @@ function SimpleSample() {
           <Link to="/pets" style={{ padding: 5 }}>
           Pets
           </Link>
+          <Link to='/owners' style={{ padding: 5 }}>
+            Owners
+          </Link>
           <Link to="/petTypes" style={{ padding: 5 }}>
           Pet Types
           </Link>
@@ -28,10 +32,11 @@ function SimpleSample() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pets" element={<Pets />} />
+        <Route path='/owners' element={<Owners />} />
         <Route path="/petTypes" element={<PetTypes />} />
       </Routes>
     </Router>
   );
 }
 
-export default SimpleSample;
+export default Main;

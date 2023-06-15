@@ -1,22 +1,29 @@
 class PetService {
-    private url:string = 'http://localhost:9966/petclinic/api';
+  private url: string = 'http://localhost:9966/petclinic/api';
 
-    findAllPets = (): Promise<any> => {
-      return fetch(this.url + '/pets')
-        .then((response) => response.json())
-        .catch((error) => {
-          console.error(error);
-        });
-    };
-
-    findAllPetTypes = (): Promise<any> => {
-      return fetch(this.url + "/pettypes")
-      .then((response) => response.json() )
+  findAllPets = (): Promise<any> => {
+    return fetch(this.url + '/pets')
+      .then((response) => response.json())
       .catch((error) => {
         console.error(error);
-      })
-    };
-  }
-  
-  export default PetService;
-  
+      });
+  };
+
+  findAllOwners = (): Promise<any> => {
+    return fetch(this.url + '/owners')
+      .then((response) => response.json())
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  findAllPetTypes = (): Promise<any> => {
+    return fetch(this.url + '/pettypes')
+      .then((response) => response.json())
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+}
+
+export default PetService;

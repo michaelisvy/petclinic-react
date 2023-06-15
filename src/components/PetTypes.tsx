@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
 import PetService from '../service/PetService';
 
+
+
 const PetTypes = () => {
   const [petTypes, setPetTypes] = useState([{ id: '', name: '' }]);
 

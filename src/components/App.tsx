@@ -1,13 +1,14 @@
-import '../App.css'
+import '../App.css';
 import { AppBar } from '@material-ui/core';
-import MaterialTable from './MaterialTable';
 import { makeStyles } from '@material-ui/core/styles';
-import SimpleSample from './SimpleSample';
+import Main from './Main';
 
 const useStyles = makeStyles({
   appBar: {
     backgroundColor: 'white',
-    color: "black"
+    color: 'black',
+    width: 1000,
+    height: 800,
   },
 });
 
@@ -15,12 +16,12 @@ const App = () => {
   const classes = useStyles();
 
   return (
-      <div>
+    <div>
       <AppBar position="static" className={classes.appBar}>
-        <SimpleSample />
-      </AppBar>  
-      </div>
-  )
-}
+        <Main />
+      </AppBar>
+    </div>
+  );
+};
 
-export default App
+export default App;
