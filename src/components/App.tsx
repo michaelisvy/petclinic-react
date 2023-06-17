@@ -1,7 +1,7 @@
 import '../App.css';
 import { AppBar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Main from './Main';
+import Layout from './Layout';
 
 const useStyles = makeStyles({
   appBar: {
@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div>
       <AppBar position="static" className={classes.appBar}>
-        <Main />
+        <Layout />
       </AppBar>
     </div>
   );

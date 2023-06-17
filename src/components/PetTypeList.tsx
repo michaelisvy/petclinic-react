@@ -1,8 +1,14 @@
-import { useEffect, useState } from 'react'
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
+import { useEffect, useState } from 'react';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+} from '@material-ui/core';
 import PetService from '../service/PetService';
-
-
 
 const PetTypes = () => {
   const [petTypes, setPetTypes] = useState([{ id: '', name: '' }]);
@@ -10,13 +16,18 @@ const PetTypes = () => {
   const petService = new PetService();
 
   useEffect(() => {
-    petService.findAllPetTypes()
-      .then( (data) => {setPetTypes(data)} )
-      .catch(error => { console.log(error) } )
-  }, [])
+    petService
+      .findAllPetTypes()
+      .then((data) => {
+        setPetTypes(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
-       <TableContainer component={Paper}>
+    <TableContainer component={Paper}>
       <Table>
         <TableHead>
           <TableRow>
@@ -34,7 +45,7 @@ const PetTypes = () => {
         </TableBody>
       </Table>
     </TableContainer>
-  )
-}
+  );
+};
 
-export default PetTypes
+export default PetTypes;
